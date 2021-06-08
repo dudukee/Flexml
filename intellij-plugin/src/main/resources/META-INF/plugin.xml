@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.guet.flexbox.intellij</id>
-    <name>flexml intellij support</name>
+    <name>Flexml Support</name>
     <version>1.1.0</version>
     <vendor email="imlkluo@qq.com"
         url="https://github.com/sanyuankexie/Gbox">sanyuankexie
@@ -63,8 +63,8 @@
             name="package"/>
         <internalFileTemplate
             name="flexml-file"/>
-        <xml.tagNameProvider
-            implementation="com.guet.flexbox.intellij.completion.FlexmlComponentNameProvider"/>
+<!--        <xml.tagNameProvider-->
+<!--            implementation="com.guet.flexbox.intellij.completion.FlexmlComponentNameProvider"/>-->
         <completion.contributor language="XML"
             implementationClass="com.guet.flexbox.intellij.completion.FlexmlCompletionContributor"/>
 <!--         <fileTypeFactory
