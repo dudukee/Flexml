@@ -9,7 +9,7 @@ public final class TextProvider {
         StringBuilder res = new StringBuilder(sum);
         while (res.length() < sum) {
             int num = (int) (Math.random() * 100);
-            if (num < 30) {
+            if (num < 90) {
                 //25%概率说个名言
                 res.append(randomChoice(famous)
                         .replace("a", randomChoice(before))

@@ -1,74 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <com.guet.flexbox.playground.widget.TransformRootLayout
         android:id="@+id/transform_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <FrameLayout
-            android:id="@+id/clip"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <FrameLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </FrameLayout>
+                android:layout_height="match_parent" />
+
             <com.guet.flexbox.playground.widget.BlurLayout
-                android:clickable="true"
-                app:cornerRadius="0dp"
-                android:background="#80FFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_gravity="bottom"
-                android:orientation="horizontal">
+                android:background="#80FFFFFF"
+                android:clickable="true"
+                android:orientation="horizontal"
+                app:cornerRadius="0dp">
+
                 <View
-                    android:background="@android:color/darker_gray"
                     android:layout_width="match_parent"
-                    android:layout_height="1px"/>
+                    android:layout_height="1px"
+                    android:background="@android:color/darker_gray" />
+
                 <ImageView
-                    android:padding="14dp"
-                    android:src="@drawable/ic_mian"
                     android:id="@+id/main"
-                    android:layout_marginLeft="30dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center_vertical|left"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp" />
-                <ImageView
+                    android:layout_marginLeft="50dp"
                     android:padding="14dp"
-                    android:src="@drawable/ic_jianjie"
+                    android:src="@drawable/ic_mian" />
+
+                <ImageView
                     android:id="@+id/introduction"
-                    android:layout_gravity="center_vertical|center_horizontal"
                     android:layout_width="55dp"
-                    android:layout_height="55dp" />
-                <ImageView
-                    android:padding="14dp"
-                    android:src="@drawable/ic_info"
-                    android:id="@+id/about"
-                    android:layout_marginRight="30dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="50dp"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_jianjie" />
+
+                <ImageView
+                    android:id="@+id/about"
                     android:layout_width="55dp"
-                    android:layout_height="55dp" />
+                    android:layout_height="55dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginRight="30dp"
+                    android:padding="14dp"
+                    android:src="@drawable/ic_saoma"
+                    android:visibility="gone" />
             </com.guet.flexbox.playground.widget.BlurLayout>
         </FrameLayout>
     </com.guet.flexbox.playground.widget.TransformRootLayout>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bottom_sheet_host"
-        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
         <FrameLayout
-            app:behavior_hideable="true"
-            app:behavior_peekHeight="500dp"
             android:id="@+id/design_bottom_sheet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="500dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
-            <include layout="@layout/fragment_code"/>
+
+            <include layout="@layout/fragment_code" />
         </FrameLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>

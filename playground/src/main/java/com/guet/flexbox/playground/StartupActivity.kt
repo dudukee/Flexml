@@ -19,9 +19,9 @@ class StartupActivity : AppCompatActivity() {
         val ctx = application
         AppLoader.loadWithCallback(ctx) {
             ActivityCompat.requestPermissions(
-                    this,
-                    definedPermissions,
-                    REQUEST_CODE
+                this,
+                definedPermissions,
+                REQUEST_CODE
             )
         }
         DoraemonKit.install(application)
@@ -30,18 +30,19 @@ class StartupActivity : AppCompatActivity() {
 
 
     override fun onRequestPermissionsResult(
-            requestCode: Int,
-            permissions: Array<String>,
-            grantResults: IntArray) {
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         for (result in grantResults) {
             if (result == PackageManager.PERMISSION_DENIED) {
                 AlertDialog.Builder(this)
-                        .setTitle("提示")
-                        .setMessage("需要授予权限才能正常使用哦！")
-                        .setCancelable(false)
-                        .setNegativeButton("确认") { _: DialogInterface?, _: Int -> finish() }
-                        .show()
+                    .setTitle("提示")
+                    .setMessage("需要授予权限才能正常使用哦！")
+                    .setCancelable(false)
+                    .setNegativeButton("确认") { _: DialogInterface?, _: Int -> finish() }
+                    .show()
                 return
             }
         }
@@ -52,8 +53,10 @@ class StartupActivity : AppCompatActivity() {
     private val definedPermissions: Array<String>
         get() = try {
             val packageInfo = this.packageManager
-                    .getPackageInfo(this.packageName,
-                            PackageManager.GET_PERMISSIONS)
+                .getPackageInfo(
+                    this.packageName,
+                    PackageManager.GET_PERMISSIONS
+                )
             val list = mutableListOf(*packageInfo.requestedPermissions)
             list.remove(Manifest.permission.SYSTEM_ALERT_WINDOW)
             list.toTypedArray()

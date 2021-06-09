@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Flex>
     <Text
-        background="red"
+        background="lightgray"
         width="360"
         height="800"
         text="${html}"
-        onClick="${()->{pageContext.http().method('get').url('http://192.168.89.100:8080/qrcode').success((htmlData)->{pageContext.refresh().update('html',htmlData).commit()}).commit()}}">
+        onClick="${()->{pageContext.http().method('get').url('http://192.168.89.100:8080').success((htmlData)->{pageContext.refresh().update('html',htmlData).commit()}).commit()}}">
     </Text>
 </Flex>

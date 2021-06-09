@@ -61,26 +61,7 @@ class HomepageFragment : Fragment() {
             intent.data = uri
             startActivity(intent)
         }
-        val sharedPreferences = requireActivity().getSharedPreferences("startup", Context.MODE_PRIVATE)
-        if (!sharedPreferences.contains("first") || BuildConfig.DEBUG) {
-            QuickPopupBuilder.with(requireContext())
-                    .contentView(R.layout.idea_popup_window)
-                    .config(QuickPopupConfig()
-                            .gravity(Gravity.CENTER)
-                            .blurBackground(true))
-                    .show(idea)
-            sharedPreferences.edit()
-                    .putInt("first", 0)
-                    .apply()
-        }
-        view.findViewById<View>(R.id.search).setOnClickListener {
-            startActivity(Intent(requireContext(), SearchActivity::class.java),
-                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-                            requireActivity(),
-                            it,
-                            "search"
-                    ).toBundle())
-        }
+
         appBarLayout = view.findViewById(R.id.appbar)
         coordinator = view.findViewById(R.id.coordinator)
         feed = view.findViewById(R.id.feed)

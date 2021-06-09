@@ -44,7 +44,6 @@
         app:widget_disable_slider_refresh="true"
         android:id="@+id/slide_layout"
         android:orientation="vertical"
-        android:background="@drawable/ic_background_transition"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!-- header -->

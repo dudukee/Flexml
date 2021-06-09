@@ -22,8 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val fragments by lazy {
         arrayOf(
                 HomepageFragment(),
-                IntroductionFragment(),
-                AboutFragment()
+                IntroductionFragment()
         )
     }
 
